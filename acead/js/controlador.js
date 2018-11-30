@@ -22,7 +22,6 @@ $('#verpass').click(function(){
 	}
 });
 
-
 function formu(valor) {
 		var nombre1=$('#InputNombre1').val();
 		var nombre2=$('#InputNombre2').val();

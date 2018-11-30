@@ -51,7 +51,7 @@
                                     break;
                                 case '1':
                                     echo '<br><div class="sufee-alert alert with-close alert-warning alert-dismissible fade show">   Datos incorrectos!!!<button id="cierra" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true" id="cierre" name="cierra">×</span></button></div>';
-                                    //echo '<script>alert("EROR 1:'.$valor.'");</script>';                                    
+                                    echo '<script>alert("EROR 1:'.$valor.'");</script>';                                    
                                     break;
                                 case '2':
                                     echo '<br><div class="sufee-alert alert with-close alert-danger alert-dismissible fade show"><span class="badge badge-pill badge-danger">ERROR: </span> Su usuario esta bloqueado o inactivo, favor comuniquese con el administrador.<button type="button" id="cierra" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true" id="cierre">×</span></button></div>';
@@ -59,9 +59,6 @@
                                 case '3':
                                     echo '<br><div class="sufee-alert alert with-close alert-danger alert-dismissible fade show"> Contraseña incorrecta!!<button type="button" id="cierra" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>';
                                     echo '<script>alert("'.$valor.'");</script>';
-                                    break;
-                                case '4':
-                                    echo '<br><div class="sufee-alert alert with-close alert-success alert-dismissible fade show"> Contraseña actualizada exitosamente!<button type="button" id="cierra" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>';
                                     break;
                                 case 'ok':
                                     echo '<br><div class="sufee-alert alert with-close alert-success alert-dismissible fade show"><span class="badge badge-pill badge-success">NOTICE: </span> ¡USUARIO AGREGADO EXITOSAMENTE!<button type="button" id="cierra" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true" id="cierre">×</span></button></div>';

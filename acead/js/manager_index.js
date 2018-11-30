@@ -4,10 +4,7 @@
  * and open the template in the editor.
  */
 
-
 $('#cierra').on('click', function () {
     $('.with-close').remove();
 });
-
-
 

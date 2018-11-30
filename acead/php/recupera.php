@@ -106,22 +106,16 @@ switch ($err) {
                         <?php 
                             $msj = filter_input(INPUT_GET, 'msj');
                             $err = filter_input(INPUT_GET, 'err');
-                            $other = filter_input(INPUT_GET, 'ot');
-                            
                             
                             switch ($msj){
                                 case '1':
-                                    echo '<br><br><div class="sufee-alert alert with-close alert-danger alert-dismissible fade show"> ¡Este usuario no se ha encontrado!<button type="button" id="cierra" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>';
+                                    echo '<br><div class="sufee-alert alert with-close alert-danger alert-dismissible fade show"> ¡Este usuario no se ha encontrado!<button type="button" id="cierra" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>';
                                     break;
                                 case '2':
-                                    echo '<br><br><div class="sufee-alert alert with-close alert-danger alert-dismissible fade show"> ERROR: '.$err.'<button type="button" id="cierra" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>';
+                                    echo '<br><div class="sufee-alert alert with-close alert-danger alert-dismissible fade show"> ERROR: '.$err.'<button type="button" id="cierra" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>';
                                     break;
                                 case '3':
-                                    echo '<br><br><div class="sufee-alert alert with-close alert-success alert-dismissible fade show"> ¡Se ha enviado un mensaje a tu cuenta de correo!<button type="button" id="cierra" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>';
-                                    //echo '<br><div class="sufee-alert alert with-close alert-success alert-dismissible fade show"> ¡Codigo: '.$other.'<button type="button" id="cierra" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>';
-                                    break;
-                                case '4':
-                                    echo '<br><br><div class="sufee-alert alert with-close alert-success alert-dismissible fade show"> ¡Codigo: '.$other.'<button type="button" id="cierra" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>';
+                                    echo '<br><div class="sufee-alert alert with-close alert-success alert-dismissible fade show"> ¡Se ha enviado un mensaje a tu cuenta de correo!<button type="button" id="cierra" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>';
                                     break;
                             }
                         ?>

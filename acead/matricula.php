@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $_SESSION['id']=1;
+    //$_SESSION['id']=1;
     if(!(isset($_SESSION['id']))) {
         header("Location: index.php");
   }
@@ -13,7 +13,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>INICIO</title>
+    <title>Matricula</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -29,8 +29,11 @@
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" href="utilidades/assets/scss/style.css">
     <link href="utilidades/assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+  <link href="utilidades/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+     <link href="utilidades/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 
@@ -218,7 +221,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Inicio</h1>
+                        <h1>Matricula</h1>
                     </div>
                 </div>
             </div>
@@ -234,23 +237,161 @@
         </div>
 
 
+
+   <div class="container">
+
+      <div class="card-deck mb-3 text-center">
+
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Alumnos</h4>
+          </div>
+          <div class="card-body">
+           
+           <select class="custom-select" id="alumnos">
+               
+           </select> 
+           
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card-deck mb-3 text-center">
+
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Modalidades</h4>
+          </div>
+          <div class="card-body">
+           
+           <select class="custom-select" id="modalidades">
+               
+           </select> 
+           
+          </div>
+        </div>
+
+      </div>
+
+      <div id="row">
+        <div class="card-deck mb-3 text-center">
+
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Matricula</h4>
+          </div>
+          <div class="card-body">
+            
+
+            <div class="row">
+        
+        <div class="col-xl-4 col-sm-6 mb-3">
+          <select class="form-control" id="adicionar1" size=9>
+
+          </select>
+        </div> 
+        
+        <div class="col-xl-4 col-sm-6 mb-3">
+          <select class="form-control" id="adicionar2" size=9>
+            
+          </select>
+        </div>
+        
+        <div class="col-xl-4 col-sm-6 mb-3">
+
+             <select class="form-control" id="adicionar3" size=9>
+            
+              </select>
+
+        </div>
+
+        </div>
+
+           
+          </div>
+
+           <div class="card-footer small text-muted">
+        <div>
+          <button class="btn btn-xs btn-primary" id="btn_matricular" data-toggle="modal" data-target="#matriculamodal" hidden="true"></i> Matricular
+            </button>
+            <input type="text" value="" id="valorSeccion" hidden="true">
+            <label id="error" style="color: red; font-size:large;"></label>
+            </div>
+        </div>
+        </div>
+
+      </div>
+      </div>
+
+
+
+       <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Matriculados</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>ALUMNO</th>
+                  <th>MODALIDAD</th>
+                  <th>ORIENTACION</th>
+                  <th>CLASE</th>
+                  <th>SECCION</th>
+                  <th>AULA</th>
+                  <th>DURACION</th>
+                  <th>PAGAR</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>ALUMNO</th>
+                  <th>MODALIDAD</th>
+                  <th>ORIENTACION</th>
+                  <th>CLASE</th>
+                  <th>SECCION</th>
+                  <th>AULA</th>
+                  <th>DURACION</th>
+                  <th>PAGAR</th>
+                </tr>
+              </tfoot>
+              <tbody id="clasesMatricular">
+                
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted"></div>
+      </div>
+
+      <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+          <div class="col-12 col-md">
+            <img class="mb-2" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
+            <center><small class="d-block mb-3 text-muted">&copy; Academia de musica CEAD</small></center>
+          </div>
+         
+        </div>
+      </footer>
+    </div>
+
+
     </div><!-- /#right-panel -->
 
-    <!-- Right Panel -->
-
-    <script src="utilidades/assets/js/vendor/jquery-2.1.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-    <script src="utilidades/assets/js/plugins.js"></script>
-    <script src="utilidades/assets/js/main.js"></script>
-
-
-    <script src="utilidades/assets/js/lib/chart-js/Chart.bundle.js"></script>
-    <script src="utilidades/assets/js/dashboard.js"></script>
-    <script src="utilidades/assets/js/widgets.js"></script>
-    <script src="utilidades/assets/js/lib/vector-map/jquery.vmap.js"></script>
-    <script src="utilidades/assets/js/lib/vector-map/jquery.vmap.min.js"></script>
-    <script src="utilidades/assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
-    <script src="utilidades/assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
+   <script src="utilidades/jquery/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="utilidades/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="utilidades/datatables/jquery.dataTables.js"></script>
+    <script src="utilidades/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="js/sb-admin-datatables.min.js"></script>
+    <script src="js/matricula.js"></script>
 
 
 </body>

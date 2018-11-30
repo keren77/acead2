@@ -11,7 +11,7 @@
   define("bd_h", "localhost");
   define("bd_b", "academiacead");
   define("bd_u", "root");
-  define("bd_p", "");
+  define("bd_p", "conejomemo1");
   
   class BaseDatos{
       
@@ -42,13 +42,6 @@
       
       public function getBASEDATOS(){
           return $this->basedatos;
-      }
-      
-      public function inserta_bitacora($a, $d, $iu, $io){
-          $hoy = getdate();
-          $f = $hoy['year']."-".$hoy['mon']."-".$hoy['mday'].' '.$hoy['hours'].':'.$hoy['minutes'].':'.$hoy['seconds'];
-          $cons = "CALL sp_addbitacora('".$f."','".$a."','".$d."',".$iu.",".$io.");";
-          $resp = $this->getCONEXION()->query($cons);          
       }
       
   }
